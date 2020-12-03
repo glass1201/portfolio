@@ -1,0 +1,112 @@
+@media only screen and ( max-width:1024px ) {
+    /* 헤더 구역 */
+    #header h1 { padding-top:20px;
+        padding-left:25px;
+        font-family: 'Great Vibes', cursive;
+        font-size:60px;
+        color:#fff; 
+    }
+    #header .nav { position: absolute; top:50%; right:0;
+        transform:translateY(-50%);
+        padding-right:20px;
+    }
+    #header .nav .depth1 > li > a { display:inline-block;
+        color:#fff; font-weight:bold; font-size:18px;
+        padding:0px 15px;
+    }
+
+    /* skills 구역 */
+    .section:nth-child(3) { background:#000; color:#fff;
+
+    }
+    .skillContainer { height:100%; padding:170px 0  }
+    .skillContainer h2 { font-size:40px; font-weight:bold; text-align:center
+     }
+    .skillContainer > div { width:100%; margin:50px 50px;
+      
+     }
+    .skillContainer span { font-size:25px; padding-bottom:15px }
+    .skillContainer .score {
+        height:50px;
+        width:100%;
+        display:inline-block
+    }
+    .skillContainer .myscore { color: #000; text-align:right;
+        height:50px; line-height:50px;
+         padding:0 15px;
+        font-size:20px;
+        opacity: 0;
+        border-radius:10px;
+        width:0%
+    }
+
+}
+@media only screen and ( max-width:800px ) {
+
+    #header { position: relative; height:90px;  
+        transition:all 0.5s;
+        overflow: hidden;
+    }
+    #header.on { background:rgba(0,0,0,0.7);
+        overflow:visible
+    }
+    #header h1 { padding-top:20px;
+        font-family: 'Great Vibes', cursive; font-size:45px;
+        color:#fff;
+        text-align:center;
+    }
+    #header .open-gnb { display:block;
+        position:absolute; top:50%; left:15px;
+        transform:translateY(-50%);
+        width:25px; height:17px;
+        z-index:999999;
+    }
+    #header .open-gnb span { display:block;
+        width:25px; height:3px;
+        background:#fff; margin-bottom:4px;
+        border-radius:10px;
+        transition:all 0.5s;
+    }
+    #header.on .open-gnb span:nth-of-type(2) { display:none; }
+    #header.on .open-gnb span:nth-of-type(1) {
+        transform:rotate(45deg);
+        position: absolute; top:10px; left:0;
+    }
+    #header.on .open-gnb span:nth-of-type(3) {
+        transform:rotate(-45deg);
+        position: absolute; top:10px; left:0;
+    }
+    #header .nav { background:rgba(0,0,0,0.7);
+        position:absolute; top:100%; right:0;
+        transform:translateY(0%);
+        width:100%;
+        text-align:center;
+        display:none;
+        /* opacity:0; transition:all 0.5s */
+    }
+    #header.on .nav { display:block } 
+    #header .nav .depth1 > li  { display:block;
+        float:left; width:50%;
+    }
+    #header .nav .depth1 > li > a { display:block;
+        color:#fff; font-size:18px;
+        padding:20px 20px;
+        border:1px dotted #fff;
+    }
+    #header .nav .depth1 > li:hover { transform:scale(1);}
+    #header .nav .depth1 > li:nth-child(1) > a,
+    #header .nav .depth1 > li:nth-child(2) > a { border-bottom:none; }
+    #header .nav .depth1 > li:nth-child(1) > a,
+    #header .nav .depth1 > li:nth-child(3) > a { border-right:none; }
+    #header .nav .depth2 { position: absolute; top:100%; right:0%;
+        background:rgba(0,0,0,0.7);
+        width:100%; 
+        border-radius:5px;
+        padding:15px 0;
+        opacity:0;
+        transition:all 0.7s;
+    }
+
+
+
+}

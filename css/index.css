@@ -1,0 +1,376 @@
+@charset "utf-8";
+@import url('reset.css');
+
+body, html, #wrap { height:100% }
+.row { max-width:1200px; margin:0 auto;
+    padding: 0 10px
+}
+.row2 { max-width:1500px; margin:0 auto; }
+
+/* header 구역 */
+.header-outer { background:rgba(0,0,0,0.5); z-index:99999;
+    position:fixed; width:100%;
+    top:0; left:0;}
+#header { position: relative; height:116px; }
+#header h1 { padding-top:25px;
+    font-family: 'Great Vibes', cursive;
+    font-size:60px;
+    color:#fff; 
+}
+#header .open-gnb { display:none }
+#header .nav { position: absolute; top:50%; right:0;
+    transform:translateY(-50%);
+}
+#header .nav .depth1 > li  { display:inline-block; position: relative;
+    transition: all 0.7s;
+}
+#header .nav .depth1 > li > a { /*display:inline-block;*/
+    color:#fff; font-size:17px; font-family: 'Arvo', serif;
+    padding:0px 40px;
+    padding-bottom:7px;
+    transition:all 0.3s
+}
+#header .nav .depth1 > li > a.on { font-weight:bold; font-size:18px }
+#header .nav .depth1 > li:hover { transform:scale(1.1) }
+#header .nav .depth1 > li > a > i { font-size:13px; opacity:0.7;
+    padding-left:5px;
+}
+
+
+/* outlayer 구역 */
+.outlayer { position:fixed; top:0; bottom:0; left:0; right:0;
+    background:rgba(0,0,0,0.2);
+    z-index:9999;
+    display: none;
+}
+.outlayer.on { display:block }
+
+/* section 구역 */
+/* 첫번째 section*/
+.section-outer { height: 100%; font-family: 'Arvo', serif;}
+.section-outer .section { height:100% }
+.section-outer .section:nth-child(1) .slide-outer { height:100%; }
+.section-outer .section:nth-child(1) .slide-inner { height:100%; }
+.section-outer .section:nth-child(1) .slide { height:100%;
+    background-size:cover; background-repeat:no-repeat;
+    background-position:top;
+}
+.section-outer .section:nth-child(1) .slide1 {
+    background-image:url(../images/main_bg_1.jpg)
+}
+.section-outer .section:nth-child(1) .slide2 {
+    background-image:url(../images/main_bg_3.jpg)
+}
+.section-outer .section:nth-child(1) .slide3 {
+    background-image:url(../images/main_bg_2.jpg)
+}
+
+/* 슬라이드 ZoomOut 효과 */
+.slide-inner .slide.slick-active {
+    animation:zoomOutmain 3s both ;
+} 
+@-webkit-keyframes zoomOutmain {
+    from {
+      opacity: 1;
+      -webkit-transform: scale3d(1.2, 1.2, 1.2);
+        transform: scale3d(1.2, 1.2, 1.2);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+  }
+  @keyframes zoomOutmain {
+    from {
+        opacity: 1;
+        -webkit-transform: scale3d(1.2, 1.2, 1.2);
+        transform: scale3d(1.2, 1.2, 1.2);
+    }
+  
+    to {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+  }
+
+.section-outer .slide-outer .slide-text { font-size:80px;
+    color:#fff;
+    line-height:1.2;
+    position:absolute; top:65%; left:15%;
+    letter-spacing:-0.7px
+}
+.section-outer .slide-outer .slide-text p { font-size:65px; text-indent:15px;
+    letter-spacing:-1px
+}
+
+/* 화살표 구역 */
+.slide-outer { position: relative;}
+.slide-outer .marrow { font-size:80px; color:rgba(255,255,255,0.5); z-index:9999;
+    position: absolute; top:55%;
+    transform:translateY(-50%);
+    background: none;
+    outline:none;
+}
+.slide-outer .prevArrow { left:3% }
+.slide-outer .nextArrow { right:3% }
+
+/* 막대(bars) 버튼 애니메이션 */
+.slide-outer .slick-dots { 
+    position: absolute; 
+    bottom:25px; width:100%;
+    text-align:center;
+}
+.slide-outer .slick-dots li { 
+    display:inline-block;
+    width:100px; height:3px;
+    background:#777;
+    margin:0 5px;
+    position: relative;
+}
+.slide-outer .slick-dots li button { 
+    width:0%; height:3px;
+    outline:none;
+    text-indent:-999999px; 
+    overflow:hidden;
+    position: absolute; top:0; left:0;
+}
+.slide-outer .slick-dots li.slick-active button {
+    background: #000;
+    animation:progressbar 1.5s both
+}
+@keyframes progressbar {
+    0% { width:0% }
+    100% { width:100% }
+}
+
+/* 버튼 구역 */
+/* .slide-outer .slick-dots { position: absolute; 
+    bottom:25px; width:100%;
+    text-align:center;
+}
+.slide-outer .slick-dots li { display:inline-block; }
+.slide-outer .slick-dots li button { width:13px; height:13px; 
+    border-radius:50%; color:rgba(255,255,255,0.8);
+    outline:none;
+    margin:0 10px;
+    text-indent:9999999px; overflow:hidden;
+}
+.slide-outer .slick-dots li.slick-active button {
+    background: rgba(0,0,0,0.5);
+    width:25px; border-radius:50px;
+} */
+
+/* 슬라이드 재생 멈춤 버튼 */
+.slide-outer .plpa { outline:none; background:none;
+    font-size:20px; color:rgba(255,255,255,0.8);
+    position: absolute; bottom:20px; left:50%;
+    margin-left:180px
+
+}
+
+/* 두번째 section 포트폴리오 갤러리 */
+.portfolio-outer { background:#000; height:100% }
+.portfolio { padding:150px 0;}
+.portfolio h2 { font-size:40px; color:#fff;
+    padding-bottom:100px;
+    text-align:center;
+}
+.portfolio .gallery { height:100% }
+.portfolio ul.gallery li {
+    float:left; width:33.33%;
+    padding:5px
+}
+ 
+/* 갤러리 팝업 박스 */
+.portfolio .gallery-popup { opacity:0;
+    position:fixed;
+    top:50%; bottom:50%; left:50%; right:50%;
+    background:rgba(0,0,0,0.7);
+    z-index:9999999;
+    transition: all 0.5s;
+}
+.portfolio .gallery-popup.on {
+    opacity:1;
+    top:0; left:0; right:0; bottom:0;
+    opacity:visible;
+}
+.gallery-popup .popup-list {
+    position:absolute;
+    top:50%; left:25%; right:25%;
+    transform:translateY(-50%);
+    text-align:center;
+}
+.gallery-popup .popup-list .close {
+    position: absolute;
+    top:-20px; right:-15px;
+    font-size:40px; color:#fff;
+    background:none; outline:none;
+    cursor:pointer;
+}
+.gallery-popup .popup-list .arrow {
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:60px; color:#fff;
+    background:none; outline:none;
+    cursor: pointer;
+}
+.gallery-popup .popup-list .arrow.prev { left:-40px }
+.gallery-popup .popup-list .arrow.next { right:-40px }
+
+/*skills*/
+.section:nth-child(3) { background:#000; color:#fff;
+
+}
+.skillContainer { height:100%; padding:170px 0  }
+.skillContainer h2 { font-size:40px; font-weight:bold; text-align:center
+ }
+.skillContainer > div { width:100%; margin:50px 0;
+  
+ }
+.skillContainer span { font-size:25px; padding-bottom:15px }
+.skillContainer .score {
+    height:50px;
+    width:100%;
+    display:inline-block
+}
+.skillContainer .myscore { color: #000; text-align:right;
+    height:50px; line-height:50px;
+     padding:0 15px;
+    font-size:20px;
+    opacity: 0;
+    border-radius:10px;
+    width:0%
+}
+
+.skillContainer .html .myscore { background:#faf082; 
+    animation:htmlscore 1s both;
+ }
+.skillContainer .css .myscore { background:#ffdc3c;
+    animation:cssscore 1s both 0.5s
+}
+.skillContainer .js .myscore { background:#ffc81e;
+    animation:jsscore 1s both 1s
+}
+.skillContainer .jq .myscore { background:#ffb400; 
+    animation:jqscore 1s both 1.5s
+}
+.skillContainer .react .myscore { background:#ffa500;
+    animation:reactscore 1s both 2s
+}
+
+@keyframes htmlscore {
+    0% { width:0% }
+    100% { width:90%; opacity:1; }
+}
+@keyframes cssscore {
+    0% { width:0% }
+    100% { width:80%; opacity:1; }
+}
+@keyframes jsscore {
+    0% { width:0% }
+    100% { width:70%; opacity:1; }
+}
+@keyframes jqscore {
+    0% { width:0% }
+    100% { width:60%; opacity:1; }
+}
+@keyframes reactscore {
+    0% { width:0% }
+    100% { width:40%; opacity:1; }
+}
+
+
+
+/* my-info */
+
+.myinfo-outer { background:#000; height:100%;}
+.myinfo article { float:left; position:relative;
+    transform:scale(0);
+    overflow:hidden
+}
+.myinfo article.on { animation: scale 1s both;}
+@keyframes scale {
+    0% { transform:scale(0)}
+    100% { transform:scale(1)}
+}
+.myinfo article:nth-child(1) { background:#000; width:100%; height:116px}
+.myinfo article:nth-child(2) { background:#e85252; width:60%; height:430px}
+.myinfo article:nth-child(3) { background:url(../images/profile_img.jpg) no-repeat;
+    background-size:cover;
+    width:40%; height:430px}
+.myinfo article:nth-child(4){ background:#2cce9a; width:33.33%; height:420px}
+.myinfo article:nth-child(5){ background:#f0ca3b; width:33.33%; height:420px}
+.myinfo article:nth-child(6){ background:#2abbd9; width:33.33%; height:420px}
+.myinfo article .txt { font-size:50px; color:#fff;
+    padding:10px 15px;
+    position: absolute; right:-200px; top:0;
+    text-align:right;
+    opacity: 0;
+    transition:all 0.5s
+}
+.myinfo article:hover .txt { opacity:1; right:0px; }
+.myinfo article:hover i { opacity:1 }
+.myinfo article:nth-child(2):hover i { opacity:0.5;}
+.myinfo article:nth-child(2) .txt { opacity:1; right:0px; font-size:56px}
+.myinfo article i { font-size:180px; color:#fff;
+    opacity: 0.5;
+    position: absolute; left:0px; bottom:0px;
+    padding:10px 15px;
+    transition:all 0.5s
+}
+.myinfo article:nth-child(2) > i { font-size:300px;
+    position: absolute; left:-50px; bottom:-50px;
+}
+.myinfo article:nth-child(4) > i { font-size:160px}
+.myinfo article:nth-child(5) > i { font-size:180px; padding:0px 15px;}
+.myinfo article:nth-child(6) > i { padding:5px 20px}
+
+/* contact me */
+.contactOuter { background:#000; color:#fff;
+    height:100%;
+    padding-top:170px ;   }
+
+.contactTit h2 { text-align:center; 
+    font-size:40px; font-weight:bold;
+    padding-bottom:50px 
+}
+.contactInfo { font-family: '맑은고딕';
+    width:80%; margin:0 auto;
+    border:1px dotted #fff;
+}
+.contactInfo fieldset { padding:60px 80px;}
+.contactInfo ul li { padding:15px 0}
+.contactInfo label { width:20%; display:inline-block;
+    font-size:20px;
+}
+.contactInfo input { width:40%; height:30px;
+    border-radius:3px;
+    text-indent:0.7em;
+}
+.contactInfo .mailWidth { width:160px; }
+.contactInfo .mailcolor { background:#fff}
+.contactInfo select { width:110px; height:25px;
+    margin-left:5px;
+}
+.contactInfo .queryAlign { vertical-align:top ;}
+.contactInfo textarea { width:65%; height:250px;
+}
+.contactInfo .queryPadding { padding-top:10px; text-indent: 0.7em;
+    font-size:15px; font-family:'맑은고딕'; color:#777
+}
+.contactInfo .snsIcon { display:inline-block;}
+.snsIcon a i { padding:0 10px;
+    font-size:22px;
+    transition: all 0.5s;
+}
+.snsIcon a:hover i { color:#bbb; transform: scale(1.2);}
+
+
+
+
+
