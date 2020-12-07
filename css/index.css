@@ -302,7 +302,7 @@ body, html, #wrap { height:100% }
     0% { transform:scale(0)}
     100% { transform:scale(1)}
 }
-.myinfo article:nth-child(1) { background:#000; width:100%; height:160px}
+.myinfo article:nth-child(1) { background:#000; width:100%; height:130px}
 .myinfo article:nth-child(2) { background:#e85252; width:60%; height:430px}
 .myinfo article:nth-child(3) { background:url(../images/profile_img.jpg) no-repeat;
     background-size:cover;
