@@ -176,14 +176,18 @@ body, html, #wrap { height:100% }
 .portfolio-outer { background:#000; height:100% }
 .portfolio { padding:150px 0;}
 .portfolio h2 { font-size:40px; color:#fff;
-    padding-bottom:100px;
+    padding:50px 0 100px;
     text-align:center;
 }
-.portfolio .gallery { height:100% }
+/* .portfolio .gallery { height:100% }
 .portfolio ul.gallery li {
     float:left; width:33.33%;
     padding:5px
+} */
+.gallery { display:flex; flex-wrap:wrap;
+    justify-content: center;
 }
+.gallery li { width:30%; margin:1.5%}
  
 /* 갤러리 팝업 박스 */
 .portfolio .gallery-popup { opacity:0;
@@ -253,11 +257,11 @@ body, html, #wrap { height:100% }
 .skillContainer .css .myscore { background:#ffdc3c;
     animation:cssscore 1s both 0.5s
 }
-.skillContainer .js .myscore { background:#ffc81e;
-    animation:jsscore 1s both 1s
-}
 .skillContainer .jq .myscore { background:#ffb400; 
-    animation:jqscore 1s both 1.5s
+    animation:jqscore 1s both 1s
+}
+.skillContainer .js .myscore { background:#ffc81e;
+    animation:jsscore 1s both 1.5s
 }
 .skillContainer .react .myscore { background:#ffa500;
     animation:reactscore 1s both 2s
@@ -273,11 +277,11 @@ body, html, #wrap { height:100% }
 }
 @keyframes jsscore {
     0% { width:0% }
-    100% { width:70%; opacity:1; }
+    100% { width:60%; opacity:1; }
 }
 @keyframes jqscore {
     0% { width:0% }
-    100% { width:60%; opacity:1; }
+    100% { width:70%; opacity:1; }
 }
 @keyframes reactscore {
     0% { width:0% }
@@ -298,7 +302,7 @@ body, html, #wrap { height:100% }
     0% { transform:scale(0)}
     100% { transform:scale(1)}
 }
-.myinfo article:nth-child(1) { background:#000; width:100%; height:116px}
+.myinfo article:nth-child(1) { background:#000; width:100%; height:160px}
 .myinfo article:nth-child(2) { background:#e85252; width:60%; height:430px}
 .myinfo article:nth-child(3) { background:url(../images/profile_img.jpg) no-repeat;
     background-size:cover;
